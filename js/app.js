@@ -9,7 +9,7 @@ const datosPokemones = async (url)=>{
     try {
         const response = await axios({
             method: "get",
-            url: url
+            url: url                
         });
         cargarPokemones(response.data.results);
     } catch (error) {
