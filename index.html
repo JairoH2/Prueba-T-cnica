@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex - Prueba Técnica</title>
     <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="css/spinner.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap" rel="stylesheet">
@@ -15,23 +16,29 @@
     <header class="contenedor header">
         <h1 class="header__titulo">Pokedex</h1>
     </header>
-
-    <main class="listaPokemons contenedor" id="listaPokemons">
-        <!-- <div class="pokemon">
-            <div class="pokemon__header">
-                <img src="img/prueba.png" alt="" class="pokemon__img">
-            </div>
-            <div class="pokemon__info">
-                <h3>Dinosaurio</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat omnis consequatur alias iste neque dicta.</p>
-                <p>#129</p>
-                <p>Habilidades:Dinosaurio</p>
-                <p>Ataques:Dinosaurio</p>
-            </div>
-            <a href="#" class="pokemon__btn">Ver Pokemón</a>
-        </div> -->
+    <div class="spinner">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+    </div>
+    <main class="main contenedor" id="main">
+        <div class="listaPokemons" id="listaPokemons">
+            <!-- <div class="pokemon">
+                <div class="pokemon__header">
+                    <img src="" alt="" class="pokemon__img">
+                </div>
+                <div class="pokemon__info">
+                    <h3>Dinosaurio</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat omnis consequatur alias iste neque dicta.</p>
+                    <p>#129</p>
+                    <p>Habilidades:Dinosaurio</p>
+                    <p>Ataques:Dinosaurio</p>
+                </div>
+                <a href="#" class="pokemon__btn">Ver Pokemón</a>
+            </div>            -->
+        </div>
+        <div class="botones" id="botones">
+        </div>
     </main>
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/app.js"></script>
 </body>

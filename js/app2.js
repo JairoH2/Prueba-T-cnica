@@ -1,36 +1,17 @@
-//Variables 
-var spinner = document.querySelector('.spinner');
-var contenidoPokedex = document.querySelector('#main');
-var botones = document.querySelector('#botones')
-var btn__previo; 
-var btn__siguiente; 
+//Variables
+const listaPokemons = document.querySelector('#listaPokemons');
 const url = 'https://pokeapi.co/api/v2/pokemon';
-
-let pokemones = {
-    nombre: [],
-    descripcion: [],
-    id: [],
-    habilidades: [],
-    ataques: [],
-    url: ''
-}
+let habilidades;
+let templateHabilidades;
 
 //API
 const datosPokemones = async (url)=>{
-    spinner.setAttribute("style", "display: block;")
-    contenidoPokedex.setAttribute("style", "display: none;")
     try {
         const response = await axios({
             method: "get",
             url: url                
         });
         cargarPokemones(response.data.results);
-
-        btn__previo = response.data.previous ? `<img src="img/before.svg" alt="" class="btn-poke" data-url=${response.data.previous}>` : '';
-        btn__siguiente = response.data.next ? `<img src="img/after.svg" alt="" class="btn-poke" data-url=${ response.data.next}>`: '';
-
-        botones.innerHTML = btn__previo + btn__siguiente;
-
     } catch (error) {
         console.error(error);
     }
@@ -38,7 +19,7 @@ const datosPokemones = async (url)=>{
 datosPokemones(url);
 
 const cargarPokemones = async (datos)=>{
-    listaPokemons.innerHTML='';
+ 
     try {
         for(let index of datos){
 
@@ -47,7 +28,7 @@ const cargarPokemones = async (datos)=>{
                 url: index.url
             });
             
-            
+        
             const div = document.createElement('DIV');
             div.classList.add('pokemon');
             div.innerHTML=`
@@ -62,30 +43,17 @@ const cargarPokemones = async (datos)=>{
             //Agregar a lista de pokemons
             listaPokemons.appendChild(div);
         }
-  
-            spinner.setAttribute("style", "display: none;")
-            contenidoPokedex.setAttribute("style", "display: block;")
-      
-        
     } catch (error) {
         console.error(error);
     }
 }
 
-//EventListeners
-botones.addEventListener('click', (e)=>{
-    if(e.target.classList.contains('btn-poke')){
-        let valor = e.target.dataset.url;
-        console.log(valor)
-        datosPokemones(valor);
-    }
-})
 
 
+//EventListener
+cargarEventListeners();
+function cargarEventListeners(){
+    
+}
 
 //Funciones
-
-
-
-
-

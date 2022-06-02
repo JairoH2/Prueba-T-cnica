@@ -43,13 +43,18 @@ body{
 }
 
 /*Contenido Principal*/
+.main{
+    display: none;
+}
+
 .listaPokemons{
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
 }
 
-.pokemon{
+/*Card*/
+.pokemon{ 
     background-color: var(--blanco);
     padding: 4rem;
     border-radius: 1rem;
@@ -86,4 +91,18 @@ body{
 
 .pokemon__btn:hover{
     background-color: rgb(190, 36, 36);
+}
+
+/*Botones de avanzar y Retroceder*/
+
+.botones{
+    margin: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.btn-poke{
+    cursor: pointer;
+    height:4rem;
 }
